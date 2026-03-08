@@ -1,0 +1,176 @@
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    gap:40px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background:
+    radial-gradient(circle at 30% 50%, #0b6c7a 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, #17c3c8 0%, transparent 40%),
+    #02142a;
+}
+
+/* FORM */
+
+form{
+    display:flex;
+    flex-direction:column;
+    width:320px;
+    align-items: center;
+    padding:35px;
+    gap:15px;
+    border-radius:15px;
+    background:#0f172a;
+    border:2px solid #00e5ff;
+    box-shadow:0 0 20px rgba(0,229,255,0.35);
+    position:relative;
+    transition:0.3s;
+}
+
+/* form hover glow */
+
+form:hover{
+    box-shadow:0 0 35px rgba(0,229,255,0.7);
+}
+
+/* INPUTS */
+
+form input{
+    height:40px;
+    border-radius:8px;
+    border:none;
+    padding:0 12px;
+    width: 100%;
+    font-size:14px;
+    background:#1e293b;
+    color:white;
+    transition:0.25s;
+}
+
+form input::placeholder{
+    color:#94a3b8;
+}
+
+/* input glow */
+
+form input:focus{
+    box-shadow:0 0 8px #00e5ff;
+}
+
+/* BUTTON */
+
+button{
+    height:40px;
+    border:none;
+    border-radius:8px;
+    background:#00e5ff;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.25s;
+    width: 100px;
+}
+
+/* button hover */
+
+button:hover{
+    background:#00d4ff;
+    box-shadow:0 0 12px #00e5ff;
+    transform:translateY(-2px);
+}
+
+/* DETAILS CARD */
+
+#details{
+    width:320px;
+    padding:20px;
+    border-radius:15px;
+    background:#0f172a;
+    border:2px solid #00e5ff;
+    color:white;
+    box-shadow:0 0 18px rgba(0,229,255,0.35);
+    position:relative;
+    transition:0.3s;
+}
+
+/* card hover glow */
+
+#details:hover{
+    box-shadow:0 0 30px rgba(0,229,255,0.7);
+}
+
+/* animated border glow */
+
+#details::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius:15px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #00e5ff,
+        transparent
+    );
+    background-size:300%;
+    animation:borderFlow 6s linear infinite;
+    z-index:-1;
+}
+
+@keyframes borderFlow{
+    from{
+        background-position:0%;
+    }
+    to{
+        background-position:300%;
+    }
+}
+
+/* USER LIST */
+
+#details p{
+    padding:6px;
+    border-radius:6px;
+    transition:0.2s;
+}
+
+/* list hover */
+
+#details p:hover{
+    background:#1e293b;
+}
+
+@media (max-width: 768px){
+
+    body{
+        flex-direction:column;
+        gap:25px;
+        padding:20px;
+    }
+
+    form{
+        width:90%;
+        max-width:350px;
+        padding:25px;
+    }
+
+    #details{
+        width:90%;
+        max-width:350px;
+        padding:18px;
+    }
+
+    form input{
+        font-size:13px;
+        height:38px;
+    }
+
+    button{
+        width:100%;
+        height:38px;
+        font-size:14px;
+    }
+
+}
